@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali - Portfolio</title>
+  <meta name="description" content="Personal portfolio of CS student building AI agents and automation tools." />
+  
+  <!-- Fonts: Inter for EN, Vazirmatn for FA -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-accent">&lt;</span>Ali<span class="logo-accent">/&gt;</span>
+      </a>
+
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero" data-i18n="nav_about">About</a>
+        <a href="#skills" data-i18n="nav_skills">Skills</a>
+        <a href="#projects" data-i18n="nav_projects">Projects</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+        <button id="lang-toggle" class="lang-toggle-btn" aria-label="Switch language">
+          <span class="lang-text" id="lang-text">FA</span>
+          <svg class="lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / About Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content reveal">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span data-i18n="hero_status">Open to opportunities</span>
+          </div>
+          <h1 class="hero-title">
+            <span data-i18n="hero_greeting">Hello, I'm</span>
+            <span class="highlight-gold">Ali</span>
+          </h1>
+          <p class="hero-tagline" data-i18n="hero_tagline">
+            CS student building AI agents and automation tools
+          </p>
+          <p class="hero-bio" data-i18n="hero_bio">
+            Passionate about artificial intelligence, backend automation, and agentic workflows. Focus on building practical, high-impact bots and autonomous systems using Python, LLMs, and modern Web APIs.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary" data-i18n="cta_view_work">View My Work</a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="cta_contact">Get In Touch</a>
+          </div>
+        </div>
+        <div class="hero-avatar-wrapper reveal">
+          <div class="avatar-card">
+            <!-- Custom Geometric Initials SVG Avatar -->
+            <svg class="avatar-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="avatar-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1E293B"/>
+                  <stop offset="50%" stop-color="#0F172A"/>
+                  <stop offset="100%" stop-color="#0B0F19"/>
+                </linearGradient>
+                <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#F59E0B"/>
+                  <stop offset="100%" stop-color="#D97706"/>
+                </linearGradient>
+                <linearGradient id="emerald-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#10B981"/>
+                  <stop offset="100%" stop-color="#059669"/>
+                </linearGradient>
+              </defs>
+              <rect width="200" height="200" rx="100" fill="url(#avatar-grad)" />
+              <circle cx="100" cy="100" r="88" fill="none" stroke="url(#gold-grad)" stroke-width="2" stroke-dasharray="8 6" opacity="0.7"/>
+              <circle cx="100" cy="100" r="76" fill="none" stroke="url(#emerald-grad)" stroke-width="1.5" opacity="0.5"/>
+              <polygon points="100,35 150,65 150,135 100,165 50,135 50,65" fill="none" stroke="url(#gold-grad)" stroke-width="1.5" opacity="0.3"/>
+              <text x="100" y="118" font-family="'Inter', sans-serif" font-size="64" font-weight="700" fill="url(#gold-grad)" text-anchor="middle">A</text>
+              <text x="52" y="105" font-family="monospace" font-size="20" fill="#10B981" opacity="0.8">&lt;</text>
+              <text x="148" y="105" font-family="monospace" font-size="20" fill="#10B981" opacity="0.8">/&gt;</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title" data-i18n="skills_title">Technical Skills</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle" data-i18n="skills_subtitle">Core technologies and practical capabilities I utilize in production.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="skill-name" data-i18n="skill1_name">Python</h3>
+            <p class="skill-desc" data-i18n="skill1_desc">Writing clean, modular code for web scraping, automation scripts, and async API integrations.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </div>
+            <h3 class="skill-name" data-i18n="skill2_name">Telegram Bot Development</h3>
+            <p class="skill-desc" data-i18n="skill2_desc">Building feature-rich, asynchronous Telegram bots using aiogram / python-telegram-bot with interactive UIs.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 class="skill-name" data-i18n="skill3_name">AI Agent Design</h3>
+            <p class="skill-desc" data-i18n="skill3_desc">Designing multi-step LLM workflows utilizing Plan → Act → Synthesize architecture patterns.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </div>
+            <h3 class="skill-name" data-i18n="skill4_name">Git & GitHub</h3>
+            <p class="skill-desc" data-i18n="skill4_desc">Version control, collaborative workflows, and automating task execution with GitHub Actions CI/CD.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <h3 class="skill-name" data-i18n="skill5_name">Web Fundamentals</h3>
+            <p class="skill-desc" data-i18n="skill5_desc">Creating responsive, accessible, and fast web user interfaces using standard HTML5, CSS3, and JavaScript.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3 class="skill-name" data-i18n="skill6_name">English Proficiency</h3>
+            <p class="skill-desc" data-i18n="skill6_desc">Effective technical communication, documentation reading, and international collaboration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title" data-i18n="projects_title">Featured Projects</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle" data-i18n="projects_subtitle">Selected automated systems and intelligent bots I've built.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card reveal">
+            <div class="project-header">
+              <div class="project-type" data-i18n="proj1_type">Automated Bot</div>
+              <div class="project-icons">
+                <a href="https://github.com/Alipy6/telegram-gold-bot" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title" data-i18n="proj1_title">Gold Price Telegram Bot</h3>
+            <p class="project-description" data-i18n="proj1_desc">
+              A Python bot that posts live global gold prices plus Iranian Toman/USDT conversion rates and AI-generated market commentary to a Telegram channel every hour via GitHub Actions workflows.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Telegram API</span>
+              <span class="tag">AI Commentary</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Alipy6/telegram-gold-bot" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" data-i18n="btn_github">
+                GitHub Repo
+              </a>
+              <a href="https://t.me/example_gold_channel" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-gold" data-i18n="btn_view_channel">
+                View Channel
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card reveal">
+            <div class="project-header">
+              <div class="project-type" data-i18n="proj2_type">AI Agent System</div>
+              <div class="project-icons">
+                <a href="https://github.com/Alipy6/finance-agent" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title" data-i18n="proj2_title">Finance Agent AI</h3>
+            <p class="project-description" data-i18n="proj2_desc">
+              A bilingual (Persian/English) Telegram bot built as a genuine AI agent using Plan → Act → Synthesize architecture, featuring live gold/crypto/Toman data queries, interactive menus, and chart image analysis via Gemini Vision API.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Plan-Act-Synthesize</span>
+              <span class="tag">Gemini Vision</span>
+              <span class="tag">Bilingual NLP</span>
+              <span class="tag">Python / Async</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Alipy6/finance-agent" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" data-i18n="btn_github">
+                GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle" data-i18n="contact_subtitle">Feel free to reach out for collaborations or project inquiries.</p>
+        </div>
+
+        <div class="contact-cards reveal">
+          <!-- Email -->
+          <a href="mailto:ali.developer@example.com" class="contact-card">
+            <div class="contact-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label" data-i18n="contact_email_label">Email</span>
+              <span class="contact-value">ali.developer@example.com</span>
+            </div>
+          </a>
+
+          <!-- Telegram -->
+          <a href="https://t.me/Alipy6" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label" data-i18n="contact_tg_label">Telegram</span>
+              <span class="contact-value">@Alipy6</span>
+            </div>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/Alipy6" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label" data-i18n="contact_gh_label">GitHub</span>
+              <span class="contact-value">github.com/Alipy6</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <p data-i18n="footer_text">© 2026 Ali. Built with static web technologies.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
