@@ -312,6 +312,41 @@ a {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
+.project-card {
+  min-height: 100%;
+}
+
+.project-card-featured {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(245, 158, 11, 0.35);
+  background: linear-gradient(145deg, rgba(15, 36, 54, 0.98), rgba(11, 24, 38, 0.98));
+}
+
+.project-card-featured::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-primary), var(--emerald-primary));
+}
+
+.project-card-featured .project-title {
+  font-size: 1.5rem;
+}
+
+.project-card-featured .project-type::before {
+  content: "✦";
+  margin-inline-end: 0.4rem;
+  color: var(--gold-primary);
+}
+
+.tag-accent {
+  color: var(--gold-primary);
+  border-color: rgba(245, 158, 11, 0.22);
+  background-color: rgba(245, 158, 11, 0.06);
+}
+
 .project-header {
   display: flex;
   justify-content: space-between;
@@ -584,6 +619,17 @@ a {
   gap: 2rem;
 }
 
+
+.nav-links a:focus-visible,
+.lang-toggle-btn:focus-visible,
+.mobile-menu-toggle:focus-visible,
+.project-icons a:focus-visible,
+.btn:focus-visible,
+.contact-card:focus-visible {
+  outline: 2px solid var(--gold-primary);
+  outline-offset: 3px;
+}
+
 .nav-links a {
   color: var(--text-muted);
   font-weight: 500;
@@ -631,4 +677,26 @@ a {
   height: 2px;
   background-color: var(--text-main);
   transition: all var(--transition-fast);
+}
+
+@media (max-width: 520px) {
+  .container { padding-left: 1rem; padding-right: 1rem; }
+  .hero-section { padding-top: 118px; }
+  .section-header { margin-bottom: 2.5rem; }
+  .section-title { font-size: 1.9rem; }
+  .project-card { padding: 1.35rem; }
+  .project-links .btn { flex: 1 1 100%; }
+  .project-links { gap: 0.6rem; }
+  .nav-container { padding: 0 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
 }

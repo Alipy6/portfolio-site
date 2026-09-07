@@ -35,6 +35,11 @@ const translations = {
     proj2_type: "AI Agent System",
     proj2_title: "Finance Agent AI",
     proj2_desc: "A bilingual (Persian/English) Telegram bot built as a genuine AI agent using Plan → Act → Synthesize architecture, featuring live gold/crypto/Toman data queries, interactive menus, and chart image analysis via Gemini Vision API.",
+    proj3_type: "Chrome Extension",
+    proj3_title: "Market Pulse",
+    proj3_desc: "A Manifest V3 Chrome extension for a fast live market snapshot, combining global gold, Iranian Toman/USDT, and a customizable crypto watchlist with background caching, API failover handling, and safe rate-limit recovery.",
+    btn_view_project: "View Project",
+    btn_download: "Download",
     contact_title: "Get In Touch",
     contact_subtitle: "Feel free to reach out for collaborations or project inquiries.",
     contact_email_label: "Email",
@@ -77,6 +82,11 @@ const translations = {
     proj2_type: "سیستم ایجنت هوش مصنوعی",
     proj2_title: "ایجنت هوشمند مالی",
     proj2_desc: "ربات دو زبانه تلگرام به عنوان ایجنت واقعی هوش مصنوعی با معماری Plan → Act → Synthesize، استعلام زنده طلا و کریپتو، منوی تعاملی و تحلیل تصاویر نمودار با Gemini Vision.",
+    proj3_type: "افزونه کروم",
+    proj3_title: "Market Pulse",
+    proj3_desc: "افزونه Chrome با Manifest V3 برای نمایش سریع وضعیت بازار؛ شامل طلای جهانی، تومان/تتر و واچلیست قابل تنظیم کریپتو با کش پسزمینه، مدیریت خطای API و بازیابی امن از محدودیت نرخ درخواست.",
+    btn_view_project: "مشاهده پروژه",
+    btn_download: "دانلود",
     contact_title: "ارتباط با من",
     contact_subtitle: "جهت همکاری، پیشنهاد پروژه یا گفتگو، میتوانید از راههای زیر با من در تماس باشید.",
     contact_email_label: "ایمیل",
@@ -101,13 +111,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.getElementById("nav-links");
   if (mobileToggle && navLinks) {
     mobileToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("mobile-open");
+      const isOpen = navLinks.classList.toggle("mobile-open");
+      mobileToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
     // Close menu when clicking link
     navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("mobile-open");
+        mobileToggle.setAttribute("aria-expanded", "false");
       });
     });
   }
